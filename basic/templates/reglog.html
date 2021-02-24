@@ -1,0 +1,116 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>بداية الرحلة</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+<style>
+footer {
+  left: 0;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  padding: 3px;
+  background-color: Crimson;
+  color: white;
+}
+</style>
+
+</head>
+<body>
+<center><h1>{{msg}}</h1></center>
+ <div class="mi">
+  <div class="left">
+   <center>
+   <form style="background: black;" class="login100-form" method="post">
+       {% csrf_token %}
+     <span style="color: white;" class="login100-form-title">
+         تسجيل الدخول
+     </span>
+
+     <div class="wrap-input100">
+         <input class="input100" type="email" name="email" placeholder="بريدك الإلكتروني" required>
+         <span class="focus-input100"></span>
+         <span class="symbol-input100">
+             <i class="fa fa-envelope" aria-hidden="true"></i>
+         </span>
+     </div>
+
+     <div class="wrap-input100">
+         <input class="input100" type="password" name="pass" placeholder="كلمة سرك" required>
+         <span class="focus-input100"></span>
+         <span class="symbol-input100">
+             <i class="fa fa-lock" aria-hidden="true"></i>
+         </span>
+     </div>
+
+     <div class="container-login100-form-btn">
+         <button class="login100-form-btn">
+             سجل دخولك
+         </button>
+     </div>
+   </form>
+   </center>
+  </div>
+
+  <div class="right">
+   <center>
+   <form style="background: white;" class="login100-form" method="post">
+       {% csrf_token %}
+     <span class="login100-form-title">
+         إنشاء حساب
+     </span>
+
+     <div class="wrap-input100">
+         <input class="input100" type="text" name="namer" placeholder="إسمك الكامل" required>
+         <span class="focus-input100"></span>
+         <span class="symbol-input100">
+             <i class="fa fa-envelope" aria-hidden="true"></i>
+         </span>
+     </div>
+
+     <div class="wrap-input100">
+         <input class="input100" type="email" name="emailr" placeholder="بريدك الإلكتروني" required>
+         <span class="focus-input100"></span>
+         <span class="symbol-input100">
+             <i class="fa fa-envelope" aria-hidden="true"></i>
+         </span>
+     </div>
+
+     <div class="wrap-input100">
+         <input class="input100" type="password" name="pass1" placeholder="كلمة سرك" required>
+         <span class="focus-input100"></span>
+         <span class="symbol-input100">
+             <i class="fa fa-lock" aria-hidden="true"></i>
+         </span>
+     </div>
+
+     <div class="wrap-input100">
+         <input class="input100" type="password" name="pass2" placeholder="تأكيد كلمة سرك" required>
+         <span class="focus-input100"></span>
+         <span class="symbol-input100">
+             <i class="fa fa-lock" aria-hidden="true"></i>
+         </span>
+     </div>
+
+     <div class="container-login100-form-btn">
+         <button class="login100-form-btn">
+             إنشاء
+         </button>
+     </div>
+   </form>
+   </center>
+  </div>
+ </div>
+
+<footer>
+    <p><a href="/" style="font-size: 22px; margin: 2px;">Web name</a>الحقوق محفوظة لدى </p>
+</footer>
+
+</body>
+</html>

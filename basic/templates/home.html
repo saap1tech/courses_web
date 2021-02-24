@@ -1,0 +1,206 @@
+{% load static %}
+<html>
+<title>مرحبا</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+
+body, html {
+  height: 100%;
+  line-height: 1.8;
+}
+
+/* Full height image header */
+.bgimg-1 {
+  background-position: center;
+  background-size: cover;
+  background-image: url({% static '/img/mac.png/' %});
+  min-height: 100%;
+}
+
+.w3-bar .w3-button {
+  padding: 16px;
+}
+</style>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+    <a href="#home" class="w3-bar-item w3-button w3-wide">Web name</a>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <a href="#about" class="w3-bar-item w3-button">حولنا</a>
+      <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> فريقنا</a>
+      <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> أعمالنا</a>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">إغلاق x</a>
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">حولنا</a>
+  <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">فريقنا</a>
+  <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">أعمالنا</a>
+</nav>
+
+<!-- Header with full-height image -->
+<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-left w3-text-white" style="padding:48px">
+    <span class="w3-jumbo w3-hide-small">إبدأ في تعلم هواتك المفضلة من النت</span><br>
+    <span class="w3-xxlarge w3-hide-large w3-hide-medium">إبدأ في تعلم هواتك المفضلة من النت</span><br>
+    <span class="w3-large">إبدأ في تعلم هواتك المفضلة من النت</span>
+    <p><a href="/reglog/" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">إبدأ الآن</a></p>
+  </div>
+</header>
+
+<!-- About Section -->
+<div class="w3-container" style="padding:128px 16px" id="about">
+  <h3 class="w3-center">حولنا</h3>
+  <p class="w3-center w3-large">معلومات معلومات معلومات</p>
+  <div class="w3-row-padding w3-center" style="margin-top:64px">
+    <div class="w3-quarter">
+      <i class="fa fa-desktop w3-margin-bottom w3-jumbo w3-center"></i>
+      <p class="w3-large">معلومات</p>
+      <p>معلومات معلومات معلومات معلومات معلومات</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-heart w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">معلومات</p>
+      <p>معلومات معلومات معلومات معلومات معلومات</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">معلومات</p>
+      <p>معلومات معلومات معلومات معلومات معلومات</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-cog w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">معلومات</p>
+      <p>معلومات معلومات معلومات معلومات معلومات</p>
+    </div>
+  </div>
+</div>
+
+<!-- Team Section -->
+<div class="w3-container" style="padding:128px 16px" id="team">
+  <h3 class="w3-center">الفريق</h3>
+  <p class="w3-center w3-large">الشخص الأول هو المؤسس</p>
+  <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="{% static '/img/man.png/' %}" alt="man" style="width:100%">
+        <div class="w3-container">
+          <h3>شخص</h3>
+          <p class="w3-opacity">مهمته</p>
+          <p>المعلومات المعلومات المعلومات المعلومات المعلومات</p>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="{% static '/img/man.png/' %}" alt="man" style="width:100%">
+        <div class="w3-container">
+          <h3>شخص</h3>
+          <p class="w3-opacity">مهمته</p>
+          <p>المعلومات المعلومات المعلومات المعلومات المعلومات</p>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="{% static '/img/man.png/' %}" alt="man" style="width:100%">
+        <div class="w3-container">
+          <h3>شخص</h3>
+          <p class="w3-opacity">مهمته</p>
+          <p>المعلومات المعلومات المعلومات المعلومات المعلومات</p>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="{% static '/img/man.png/' %}" alt="man" style="width:100%">
+        <div class="w3-container">
+          <h3>شخص</h3>
+          <p class="w3-opacity">مهمته</p>
+          <p>المعلومات المعلومات المعلومات المعلومات المعلومات</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Work Section -->
+<div class="w3-container" style="padding:128px 16px" id="work">
+  <h3 class="w3-center">أعمالنا</h3>
+  <p class="w3-center w3-large">ماذا قمنا بالعمل؟</p>
+
+  <div class="w3-row-padding" style="margin-top:64px">
+    <div class="w3-col l3 m6">
+      <img src="{% static '/img/work.png/' %}" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="work">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="{% static '/img/work.png/' %}" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="work">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="{% static '/img/work.png/' %}" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="work">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="{% static '/img/work.png/' %}" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="work">
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-64">
+  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>إلى الأعلى</a>
+  <div class="w3-xlarge w3-section">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>
+  <p><a href="" class="w3-hover-text-green">Web name</a>الحقوق محفوظة لدى </p>
+</footer>
+
+<script>
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+
+// Toggle between showing and hiding the sidebar when clicking the menu icon
+var mySidebar = document.getElementById("mySidebar");
+
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+  } else {
+    mySidebar.style.display = 'block';
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,173 @@
+{% load static %}
+<html lang="en" class="no-js">
+
+<head>
+	<!-- Mobile Specific Meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Author Meta -->
+	<meta name="author" content="codepixer">
+	<!-- Meta Description -->
+	<meta name="description" content="">
+	<!-- Meta Keyword -->
+	<meta name="keywords" content="">
+	<!-- meta character set -->
+	<meta charset="UTF-8">
+	<!-- Site Title -->
+	<title>مشاهدة الدورة</title>
+
+	<!--
+			Google Font
+			============================================= -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,500,600" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500i" rel="stylesheet">
+
+	<!--
+			CSS
+			============================================= -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/themify-icons/0.1.2/css/themify-icons.css">
+	<link rel="stylesheet" href="{% static 'css/linearicons.css' %}">
+	<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+	<link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+	<link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+	<link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+	<link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/video.css' %}">
+
+<style>
+footer {
+  position: relative;
+  text-align: center;
+  padding: 3px;
+  background-color: Crimson;
+  color: white;
+}
+</style>
+
+
+
+</head>
+
+<body>
+
+	<!-- Start Header Area -->
+	<header id="header">
+		<div class="container">
+			<div class="row align-items-center justify-content-between d-flex">
+				<div id="logo">
+					<a href="/index/"><h5 style="color: blue;">Web name</h5></a>
+				</div>
+				<nav id="nav-menu-container">
+					<ul class="nav-menu">
+						<li><form method="post">
+							{% csrf_token %}
+							<input value="تسجيل الخروج" type="submit" name="logout" class="button"/>
+						</form></li>
+						<li><a href="/AddVd/">إضافة فيديو</a></li>
+						<li><a href="/AddPl/">إنشاء دورة</a></li>
+						<li><a href="/index/">الصفحة الرئيسية</a></li>
+					</ul>
+				</nav><!-- #nav-menu-container -->
+			</div>
+		</div>
+	</header>
+	<!-- End Header Area -->
+
+
+	<!-- Start Banner Area -->
+	<section class="home-banner-area relative">
+		<div class="container">
+			<div class="row fullscreen d-flex align-items-center justify-content-center">
+				<div class="banner-content col-lg-8 col-md-12">
+					<h1 class="wow fadeIn" data-wow-duration="4s">ستجد أفضل الدورات<br>في موقعنا</h1>
+					<p class="text-white">
+						إبدأ في الدراسة الآن.
+					</p>
+
+					<div class="input-wrap">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="rocket-img">
+			<img src="{% static 'img/rocket.png' %}" alt="">
+		</div>
+	</section>
+	<!-- End Banner Area -->
+
+	<!-- ####################### Start Scroll to Top Area ####################### -->
+	<div id="back-top">
+		<a title="Go to Top" href="#"></a>
+	</div>
+	<!-- ####################### End Scroll to Top Area ####################### -->
+
+    <!--Start Video Area-->
+    <main class="site-content">
+
+  <section class="video-area">
+    <div class="wrapper">
+
+      <div class="video-column">
+        <!--div class="video-player"-->
+		  {% for vid in select %}
+          <video width="800" height="400" autoplay controls>
+              <source src="{{vid.video.url}}" type="video/mp4">
+              Your browser does not support the video tag.
+          </video>
+		  <h1>{{vid.title}}</h1>
+		  {% endfor %}
+        <!--/div-->
+        <div class="video-info">
+        </div>
+      </div>
+
+      <div id="playlist" class="playlist">
+        <header class="next">الفيديوات القادمة</header>
+
+		  {% for vd in row %}
+
+        <a href="/watch/{{vd.play}}/{{vd.rend}}/" class="next-video">
+          <img src="{% static 'img/header-bg.png' %}" style="height:100%;" alt="">
+          <h3 class="single-video-title">{{vd.title}}</h3>
+          <p class="single-video-info">{{vd.play}}</p>
+			<span class="single-video-des">How we can create Bar Graphs With Animation using JavaScript, HTML, & CSS? Solution: JavaScript Animated Bar Graph. In Other Words, Bar Chart With Animation Effects.
+
+            </span></p>
+        </a>
+		  {% endfor %}
+
+      </div>
+    </div>
+  </section>
+</main>
+    <!--End Video Area-->
+
+	<footer>
+		<p><a href="/" style="font-size: 22px; margin: 2px;">Web name</a>الحقوق محفوظة لدى </p>
+	</footer>
+
+	<script src="{% static 'js/jquery-2.2.4.min.js' %}"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+	 crossorigin="anonymous"></script>
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+	<script src="{% static 'js/easing.min.js' %}"></script>
+	<script src="{% static 'js/hoverIntent.js' %}"></script>
+	<script src="{% static 'js/superfish.min.js' %}"></script>
+	<script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
+	<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+	<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+	<script src="{% static 'js/owl-carousel-thumb.min.js' %}"></script>
+	<script src="{% static 'js/jquery.sticky.js' %}"></script>
+	<script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+	<script src="{% static 'js/parallax.min.js' %}"></script>
+	<script src="{% static 'js/waypoints.min.js' %}"></script>
+	<script src="{% static 'js/wow.min.js' %}"></script>
+	<script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/video.js' %}"></script>
+
+</body>
+
+</html>
